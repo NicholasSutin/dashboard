@@ -24,7 +24,8 @@ export default function Home() {
         <LastKey />
       </Topbar>
       <div className="h-20" aria-hidden />
-      <h1>HIIII!</h1>
+      <h1>Content will start at this height because of a spacer above</h1>
+      
     </div>
   );
 }
