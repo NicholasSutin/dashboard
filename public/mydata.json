@@ -1,5 +1,5 @@
 {
     "name":"Nicholas Sutin",
-    "dailyTickers":"SPY, QQQ, BINANCE:BTCUSDT, IBIT",
+    "dailyTickers":"SPY, QQQ, BINANCE:BTCUSDT, IBIT, GDX",
     "TickersRefresh": 5000
 }
