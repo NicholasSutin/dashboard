@@ -34,3 +34,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+---
+
+# APIs:
+- [Cloudflare CDN-CGI](https://www.cloudflare.com/cdn-cgi/trace)
+- [Finnhub](https://finnhub.io/dashboard) for .env.local: FINNHUB_API_KEY=
+
+# Data:
+
+Data is in public/mydata.json. change name, tickers, and ticker refresh rate there.
