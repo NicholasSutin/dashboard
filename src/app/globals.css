@@ -1,26 +1,65 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {/*--idk if layer base is needed. can delete?--*/
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
+    --custom-green: theme(colors.emerald.300); 
+    --custom-red: theme(colors.red.300);  
+    --custom-gray: theme(colors.stone.300);  
   }
 }
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/*--intro--*/
+.bubble-text {
+  font-family: var(--font-bubble), sans-serif;
+}
+
+@layer utilities {
+  .font-geist-mono {
+    font-family: var(--font-geist-mono);
+  }
+
+  .typing {
+    display: inline-block;
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid currentColor;
+
+    animation:
+      typing 1.5s steps(var(--n)) forwards,
+      fade 3.5s forwards,
+      caret 0.8s step-end infinite;
+  }
+  .entry{
+    animation: fade 3s forwards;
+    background-color:var(--background);
+  }
+
+  @keyframes typing { to {width: calc(var(--n) * 1ch);}}
+  @keyframes fade {
+    0%   { opacity: 1; }
+    80%  { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; pointer-events: none;  }  
+  }
+  @keyframes caret {50% { border-color: transparent; }}
+
+  .custom-green{
+    color:var(--custom-green);
+  }
+  .custom-red{
+    color:var(--custom-red);
+  }
+  .custom-gray{
+    color:var(--custom-gray);
+  }
+}
+
