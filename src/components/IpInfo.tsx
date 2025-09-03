@@ -10,7 +10,7 @@ export default function IpInfo() {
       .then((r) => r.json())
       .then((d) => {
         if (cancelled) return;
-        setText(`data center: ${d.fl} | ip: ${d.ip}`);
+        setText(`data center: ${d.fl} | ip: ${d.ip} | `);
       })
       .catch(() => !cancelled && setText('data center: ? | ip: ?'));
 

@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
+      <body suppressHydrationWarning={true}
         className={`${geistSans.variable} ${geistMono.variable} ${bubbleFont.variable} antialiased`}
       >
         {children}

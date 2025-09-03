@@ -1,6 +1,6 @@
 {
     "name":"Nicholas Sutin",
-    "dailyTickers":"SPY, QQQ, BINANCE:BTCUSDT, IBIT, GDX",
+    "dailyTickers":"SPY, QQQ, BINANCE:BTCUSDT, IBIT, GDX, GOOGL",
     "TickersRefresh": 10000,
     "preferredStravaMonth": 8
 }

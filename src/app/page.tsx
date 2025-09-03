@@ -8,6 +8,7 @@ import ScreenRes from "../components/ScreenRes"
 import IpInfo from "../components/IpInfo";
 import MarketList from "@/components/MarketList";
 import Distance from "../components/strava/Distance"
+import CalendarDashboard from "../components/CalendarDashboard";
 
 export default function Home() {
   return (
@@ -18,15 +19,14 @@ export default function Home() {
       <Topbar>
         <Clock />
         <h1 className="text-sm select-none font-geist-mono p-5.5 mx-auto">
-          <ScreenRes /> |&nbsp;
-          <IpInfo /> |&nbsp;
+          
           <MarketList />
         </h1>
         <LastKey />
       </Topbar>
       <div className="h-20" aria-hidden />
 
-      <Distance />
+     <CalendarDashboard />
       
     </div>
   );

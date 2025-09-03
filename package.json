@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "create-env": "node -e \"require('fs').writeFileSync('.env.local', 'FINNHUB_API_KEY=\\nSTRAVA_CLIENT_ID=\\nSTRAVA_CLIENT_SECRET=\\nSTRAVA_VERIFY_TOKEN=\\nSTRAVA_REFRESH_TOKEN=\\n')\""
   },
   "dependencies": {
     "react": "19.1.0",
