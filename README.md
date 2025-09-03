@@ -40,7 +40,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 # APIs:
 - [Cloudflare CDN-CGI](https://www.cloudflare.com/cdn-cgi/trace)
 - [Finnhub](https://finnhub.io/dashboard) for .env.local: FINNHUB_API_KEY=
-- [Strava](https://strava.com) for STRAVA_CLIENT_ID=, STRAVA_CLIENT_SECRET=, STRAVA_VERIFY_TOKEN=, STRAVA_REFRESH_TOKEN=. (refresh token takes some work to get, strava will not always just give it to you  (?))
+- [Strava](https://strava.com) for STRAVA_CLIENT_ID=, STRAVA_CLIENT_SECRET=, STRAVA_VERIFY_TOKEN=, STRAVA_REFRESH_TOKEN=. (find refresh token at /api/strava/auth?debug=1, tried to make debug only work on localhost)
 
 # Data:
 
