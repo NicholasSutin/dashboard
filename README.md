@@ -10,7 +10,7 @@ npm run dev
 - [Cloudflare CDN-CGI](https://www.cloudflare.com/cdn-cgi/trace)
 - [Finnhub](https://finnhub.io/dashboard) for .env.local: FINNHUB_API_KEY=
 - [Strava](https://strava.com) for STRAVA_CLIENT_ID=, STRAVA_CLIENT_SECRET=, STRAVA_VERIFY_TOKEN=, STRAVA_REFRESH_TOKEN=. (find refresh token at /api/strava/auth?debug=1, tried to make debug only work on localhost)
-
+    - Requires you to create a [Strava API](https://www.strava.com/settings/api)
 # Data:
 
 Data is in public/mydata.json. change name, tickers, and ticker refresh rate there.
