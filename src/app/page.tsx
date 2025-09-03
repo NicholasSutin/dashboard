@@ -7,6 +7,7 @@ import LastKey from "../components/LastKey";
 import ScreenRes from "../components/ScreenRes"
 import IpInfo from "../components/IpInfo";
 import MarketList from "@/components/MarketList";
+import Distance from "../components/strava/Distance"
 
 export default function Home() {
   return (
@@ -24,7 +25,8 @@ export default function Home() {
         <LastKey />
       </Topbar>
       <div className="h-20" aria-hidden />
-      <h1>Content will start at this height because of a spacer above</h1>
+
+      <Distance />
       
     </div>
   );
