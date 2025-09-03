@@ -28,7 +28,7 @@ export default function LastKey({ className = "" }: { className?: string }) {
   return (
         <div
           aria-live="polite"
-          className={`w-5 h-16 text-[var(--foreground)] flex items-center justify-center select-none bubble-text text-6xl
+          className={`w-8 h-16 text-[var(--foreground)] flex items-center justify-center select-none bubble-text text-6xl
             ${noTrans ? "transition-none" : "transition-opacity duration-[300ms]"}
             ${fading ? "opacity-0" : "opacity-100"} ml-auto mr-[10px] ${className}`}
         >
