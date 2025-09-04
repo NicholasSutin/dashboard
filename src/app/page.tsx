@@ -13,9 +13,7 @@ import CalendarDashboard from "../components/CalendarDashboard";
 export default function Home() {
   return (
     <div>
-      <div className="flex items-center justify-center min-h-screen min-w-screen entry select-none fixed z-50">
-        <Typein className="text-8xl text-center" />
-      </div>
+      
       <Topbar>
         <Clock />
         <h1 className="text-sm select-none font-geist-mono p-5.5 mx-auto">
@@ -26,7 +24,18 @@ export default function Home() {
       </Topbar>
       <div className="h-20" aria-hidden />
 
-     <CalendarDashboard />
+
+      <div className="flex w-full p-2 h-screen min-h-0">
+        <div className="w-1/4 p-2 min-h-0">
+          <CalendarDashboard />
+        </div>
+        <div className="w-1/2 p-2">Main Content</div>
+        <div className="w-1/4 p-2">Right</div>
+      </div>
+
+
+
+   
       
     </div>
   );

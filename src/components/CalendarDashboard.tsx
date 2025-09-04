@@ -14,7 +14,7 @@ interface CalendarEvent {
 }
 
 export default function CalendarDashboard() {
-  const [events, setEvents] = useState<(CalendarEvent & { start: Date; end: Date; })[]>([]);
+  const [events, setEvents] = useState<(CalendarEvent & { start: Date; end: Date })[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -42,38 +42,38 @@ export default function CalendarDashboard() {
     fetchEvents();
   }, []);
 
-  if (loading) return <div className="p-4">Loading calendar events...</div>;
-  if (error) return <div className="p-4 text-red-600">Error: {error}</div>;
+  if (loading) return <div>Loading calendar events...</div>;
+  if (error) return <div className="text-red-600">Error: {error}</div>;
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">📅 Calendar Dashboard</h1>
-      <ul className="space-y-3">
-        {events.map((event, i) => (
-          <li
-            key={i}
-            className="border rounded-lg shadow-sm p-3 hover:bg-gray-50 transition"
-          >
-            <div className="font-semibold">{event.title}</div>
-            <div className="text-sm text-gray-600">
-              {event.start.toLocaleDateString()} → {event.end.toLocaleDateString()}
+    <div className="h-full overflow-y-auto space-y-3">
+      {events.map((event, i) => (
+        <div
+          key={i}
+          className="flex w-full h-[100px] rounded-md border border-gray-700 overflow-hidden bg-gray-900"
+        >
+          {/* Left gray strip (later for calendar color-coding) */}
+          <div className="w-2 bg-gray-500 shrink-0"></div>
+
+          {/* Right main content */}
+          <div className="flex-1 min-w-0 p-3 bg-gray-800 text-white">
+            {/* Title */}
+            <div className="font-semibold block truncate">{event.title}</div>
+
+            {/* Time */}
+            <div className="text-sm text-gray-300">
+              {event.isAllDay
+                ? "All day"
+                : `${event.start.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })} — ${event.end.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`}
             </div>
-            {event.description && (
-              <a
-                href={event.description}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 underline text-sm"
-              >
-                Details
-              </a>
-            )}
-            <div className="text-xs text-gray-500">
+
+            {/* Description */}
+            <div className="text-xs text-gray-400 truncate">
               {event.calendarName}
             </div>
-          </li>
-        ))}
-      </ul>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

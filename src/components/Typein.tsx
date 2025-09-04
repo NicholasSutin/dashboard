@@ -15,10 +15,12 @@ export default function Typein({ className }: TypeinProps) {
   const text = `Welcome, ${name}`;
 
   return (
-    <h1 className={`bubble-text ${className ?? ""}`}>
-      <span className="typing" style={{ ["--n" as any]: text.length }}>
-        {text}
-      </span>
-    </h1>
+    <div className="flex items-center justify-center min-h-screen min-w-screen entry select-none fixed z-50">
+      <h1 className={`bubble-text text-8xl text-center ${className ?? ""}`}>
+        <span className="typing" style={{ ["--n" as any]: text.length }}>
+          {text}
+        </span>
+      </h1>
+    </div>
   );
 }
