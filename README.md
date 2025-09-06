@@ -14,6 +14,8 @@ npm run dev
     - see your strava activities at /api/strava/activities
 - [Google Apps Script](https://script.google.com/) for GOOGLE_APPS_SCRIPT_URL= (calendar data)
     - deploy > new deployments > web app: execute as: me, Who has access: anyone > web app URL (ends in /exec)
+    - [script you need](https://script.google.com/d/1vc_sDa5rA0aXGkWyUTzdwwazXr0eqpoqjZOQk8C7wN0pbRsivapFEZ_t/edit?usp=sharing)
+    - [library reference](https://script.google.com/macros/library/d/1vc_sDa5rA0aXGkWyUTzdwwazXr0eqpoqjZOQk8C7wN0pbRsivapFEZ_t/2)
     - Note that I will do my best not to require google cloud/console projects because many organizations are afraid of allowing their users to develop. I'd really like to later find an auth app that can send google scopes to be managed from here (This might require a review by google themselves because it would be a public project accessing OAuth scopes / advanced (personal) APIs)
 
 # Data:
