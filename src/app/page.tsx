@@ -5,9 +5,6 @@ import Clock from "../components/Clock";
 import Topbar from "../components/Topbar";
 import LastKey from "../components/LastKey";
 import ScreenRes from "../components/ScreenRes"
-import IpInfo from "../components/IpInfo";
-import MarketList from "@/components/MarketList";
-import Distance from "../components/strava/Distance"
 import CalendarDashboard from "../components/CalendarDashboard";
 
 export default function Home() {

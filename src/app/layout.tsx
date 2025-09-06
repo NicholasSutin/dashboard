@@ -7,6 +7,8 @@ import Topbar from "@/components/Topbar";
 import Clock from "@/components/Clock";
 import LastKey from "@/components/LastKey";
 import MarketList from "@/components/MarketList";
+import Distance from "../components/strava/Distance"
+import IpInfo from "../components/IpInfo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,21 +38,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} ${bubbleFont.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bubbleFont.variable} antialiased h-screen flex flex-col`}
       >
         {/* Header persists across routes */}
         <div className="sticky top-0 z-50">
           <Topbar>
             <Clock />
             <h1 className="text-sm select-none font-geist-mono p-5.5 mx-auto">
+              <IpInfo />
               <MarketList />
+              <Distance />
             </h1>
             <LastKey />
           </Topbar>
         </div>
 
         {/* Page content fills remaining height under header */}
-        <main className="flex-1 min-h-0">{children}</main>
+        <main className="flex-1 min-h-0 overflow-auto">{children}</main>
       </body>
     </html>
   );

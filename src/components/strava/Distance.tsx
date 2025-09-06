@@ -22,5 +22,5 @@ export default async function Distance() {
   });
   const s = await res.json();
 
-  return <h1>{s.totalMiles} mi in {s.month}/{s.year}</h1>;
+  return <span> | {s.totalMiles} mi in {s.month}/{s.year}</span>;
 }
