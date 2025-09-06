@@ -12,21 +12,10 @@ import CalendarDashboard from "../components/CalendarDashboard";
 
 export default function Home() {
   return (
-    <div>
-      
-      <Topbar>
-        <Clock />
-        <h1 className="text-sm select-none font-geist-mono p-5.5 mx-auto">
-          
-          <MarketList />
-        </h1>
-        <LastKey />
-      </Topbar>
-      <div className="h-20" aria-hidden />
+    <div className="h-full min-h-0">
 
-
-      <div className="flex w-full p-2 h-screen min-h-0">
-        <div className="w-1/4 p-2 min-h-0">
+      <div className="flex w-full p-2 h-full min-h-0">
+        <div className="w-1/4 p-2 min-h-0 h-full flex flex-col overflow-hidden">
           <CalendarDashboard />
         </div>
         <div className="w-1/2 p-2">Main Content</div>

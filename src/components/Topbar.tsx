@@ -6,7 +6,7 @@ type TopbarProps = {
 
 export default function Topbar({ children }: TopbarProps) {
   return (
-    <div className="fixed top-0 left-0 w-screen bg-[var(--background)] p-[10px] z-10 flex flex-row">
+    <div className="w-full bg-[var(--background)] p-[10px] flex flex-row">
       {children}
     </div>
   );

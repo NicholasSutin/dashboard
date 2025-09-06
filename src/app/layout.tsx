@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 import "./globals.css";
+
+import Topbar from "@/components/Topbar";
+import Clock from "@/components/Clock";
+import LastKey from "@/components/LastKey";
+import MarketList from "@/components/MarketList";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,10 +19,10 @@ const geistMono = Geist_Mono({
 });
 
 const bubbleFont = localFont({
-  src: './fonts/bubblefont.woff2',
-  variable: '--font-bubble',
-  display: 'swap',
-})
+  src: "./fonts/bubblefont.woff2",
+  variable: "--font-bubble",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,15 +31,26 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} ${bubbleFont.variable} antialiased`}
+      <body
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} ${bubbleFont.variable} antialiased min-h-screen flex flex-col`}
       >
-        {children}
+        {/* Header persists across routes */}
+        <div className="sticky top-0 z-50">
+          <Topbar>
+            <Clock />
+            <h1 className="text-sm select-none font-geist-mono p-5.5 mx-auto">
+              <MarketList />
+            </h1>
+            <LastKey />
+          </Topbar>
+        </div>
+
+        {/* Page content fills remaining height under header */}
+        <main className="flex-1 min-h-0">{children}</main>
       </body>
     </html>
   );
